@@ -4,3 +4,36 @@
  h1{
     color: $textColour;
 } 
+
+.bigCard{
+    background-color: cadetblue;
+    width: 200px;
+    height: 500px;
+    margin: auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+
+    button{
+        color: blue;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .icon{
+        width: 40px;
+        height: 40px;
+    }
+
+
+
+    .cta{
+        background-color:yellow;
+        position: relative;
+        top: 40%;
+        margin-top: 10px;
+    }
+}
+
