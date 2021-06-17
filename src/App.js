@@ -1,15 +1,18 @@
 import '../src/styles/main.scss';
-import Card from './components/card';
+import GetStarted from './components/getStarted';
+import LogIn from './components/logIn';
+import DashboardComponent from './components/dashboardComponent';
+
 
 function App() {
   return (
     <> 
-  <h1>Hello World</h1>
-  <Card/>
-  </>
+    {/* <GetStarted/> */}
+    {/* <LogIn/> */}
+    <DashboardComponent/>
+    </>
   );
-
-}
+};
 
 export default App;
 //https://developer.spotify.com/documentation/general/design-and-branding/
