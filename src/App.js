@@ -12,3 +12,7 @@ function App() {
 }
 
 export default App;
+//https://developer.spotify.com/documentation/general/design-and-branding/
+//https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react
+// https://www.onlinepalette.com/spotify/
+// https://www.w3schools.com/cssref/css_default_values.asp

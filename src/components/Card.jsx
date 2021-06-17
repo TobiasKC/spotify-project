@@ -15,3 +15,4 @@ const card = () => {
 export default card;
 
 //https://developer.spotify.com/documentation/general/design-and-branding/
+//https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react
