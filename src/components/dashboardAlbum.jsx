@@ -1,6 +1,6 @@
 const dashboardAlbum = (props) => {
     return ( 
-    <div>
+    <div className="albumContainer">
         <img src={props.albumCover} alt="Not Found"/> 
     </div>
      );

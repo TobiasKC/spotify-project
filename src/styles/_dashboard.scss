@@ -1,21 +1,48 @@
 @import "_variables.scss";
 
-button.navigation{
-    color: $spotifyWhite;
-    background-color: $spotifyDarkBlack;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    padding: 5px;
-    margin: 5px;
-    font-size: 10px;
-    text-align: center;
+body {
+	background-color: $spotifyLightBlack;
 }
 
-.searchBar{
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    height: 40px;
-    width: 200px;
+.albumContainer {
+	border: 150px solid black;
+	box-sizing: content-box;
+	width: 300px;
+	height: 300px;
+	margin: auto;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+}
+
+header {
+	background-color: white;
+	display: flex;
+	width: 100vw;
+}
+
+button.navigation {
+	color: $spotifyWhite;
+	background-color: $spotifyDarkBlack;
+	border-radius: 50%;
+	border: 2px solid yellow;
+	height: 50px;
+	width: 50px;
+	padding: 5px;
+	margin: 5px;
+	font-size: 10px;
+	text-align: center;
+}
+
+.searchBar {
+	border: 2px solid black;
+	border-radius: 5px;
+	// top right and left
+	padding: 5px;
+	height: 40px;
+	width: 200px;
+	flex: 1;
+	margin: auto 5px;
 }
