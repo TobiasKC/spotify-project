@@ -7,6 +7,7 @@ const scope =
 	"streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state";
 
 const authURL = `https://accounts.spotify.com/authorize?response_type=token&client_id=${clientID}&redirect_uri=${redirectURL}&scope=${scope}`;
+//To do: Connect to the store, link = state.authURL
 
 const GetStarted = () => {
 	return (
