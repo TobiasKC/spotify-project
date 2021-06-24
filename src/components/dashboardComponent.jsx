@@ -31,12 +31,14 @@ const DashboardComponent = () => {
 	// Including function outside of useEffect is throwing warning, try including to remove
 	// :  https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook
 
-
-
-	const songName = "californication";
+	//Logs state and undefined 
+	console.log(searchTermState);
+	// Api call works with songName in GET request
+	const songName = "happy";
 	const searchType = "track";
 
 	useEffect(() => {
+		const timeout = setTimeout(() =>{
 		if (!authToken) console.log("Token not found", authToken);
 		if (!searchTermState) console.log("State not found", searchTermState);
 		axios
@@ -59,8 +61,9 @@ const DashboardComponent = () => {
 			})
 			.catch((err) => {
 				console.log(err);
-			});
-	}, [searchTermState]);
+			});}, 500);
+			return () => clearTimeout(timeout);
+		}, [searchTermState]);
 
 	return (
 		<>
