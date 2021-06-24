@@ -14,15 +14,15 @@ const scope =
 const initialState = {
 	authToken: "",
 	authURL: `https://accounts.spotify.com/authorize?response_type=token&client_id=${clientID}&redirect_uri=${redirectURL}&scope=${scope}`,
-	searchTerm: "happy",
+	searchTerm: "Hello World",
 };
 // Is data accessed by any other component?
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
 		case "UPDATE_AUTH_TOKEN":
-			return { authToken: action.value };
+			return { ...state, authToken: action.value };
 		case "UPDATE_SEARCH_TERM":
-			return { searchTerm: action.value };
+			return { ...state, searchTerm: action.value };
 		default:
 			return state;
 	}

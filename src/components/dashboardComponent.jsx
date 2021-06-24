@@ -5,12 +5,13 @@ import { useEffect } from "react";
 import axios from "axios";
 
 const DashboardComponent = () => {
-	const authToken = useSelector((state) => state.authToken);
 	// On Component mount, set value of authToken in state to result of fetchToken. Before useSelector() exectues.
-	
+
 	useEffect(() => {
 		dispatch({ type: "UPDATE_AUTH_TOKEN", value: fetchToken() });
-	});
+	},[]);
+
+	const authToken = useSelector((state) => state.authToken);
 
 	function fetchToken() {
 		const url = new URLSearchParams(window.location.href).toString();
@@ -19,51 +20,46 @@ const DashboardComponent = () => {
 		return url.substring(firstChar, secondChar).slice(1);
 	}
 
-	// Connect to the store. Only accessing authToken currently
-	// authToken is ref used to query state.authToken
-	// const authToken = useSelector((state) => state.authToken);
 	const searchTermState = useSelector((state) => state.searchTerm);
 
 	//Enable dispatch
 	const dispatch = useDispatch();
 
-	// Grab authToken from URL and return
-	// Including function outside of useEffect is throwing warning, try including to remove
-	// :  https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook
-
-	//Logs state and undefined 
+	//Logs state and undefined similatenousy
 	console.log(searchTermState);
 	// Api call works with songName in GET request
 	const songName = "happy";
 	const searchType = "track";
 
+	//Possible that state isnt being updated/read fast enough
 	useEffect(() => {
-		const timeout = setTimeout(() =>{
-		if (!authToken) console.log("Token not found", authToken);
-		if (!searchTermState) console.log("State not found", searchTermState);
-		axios
-			.get(
-				`https://api.spotify.com/v1/search?q=${searchTermState}&type=${searchType}`,
-				{
-					headers: { Authorization: `Bearer ${authToken}` },
-				}
-			)
-			.then((res) => {
-				console.log(
-					res.data.tracks.items.map((track) => {
-						return {
-							artist: track.artists[0].name,
-							title: track.uri,
-							albumUrl: track.album.images[2].url,
-						};
-					})
-				);
-			})
-			.catch((err) => {
-				console.log(err);
-			});}, 500);
-			return () => clearTimeout(timeout);
-		}, [searchTermState]);
+		const timeout = setTimeout(() => {
+			if (!authToken) console.log("Token not found", authToken);
+			if (!searchTermState) console.log("State not found", searchTermState);
+			axios
+				.get(
+					`https://api.spotify.com/v1/search?q=${searchTermState}&type=${searchType}`,
+					{
+						headers: { Authorization: `Bearer ${authToken}` },
+					}
+				)
+				.then((res) => {
+					console.log(
+						res.data.tracks.items.map((track) => {
+							return {
+								artist: track.artists[0].name,
+								title: track.uri,
+								albumUrl: track.album.images[2].url,
+							};
+						})
+					);
+				})
+				.catch((err) => {
+					console.log(err);
+				});
+		}, 500);
+		return () => clearTimeout(timeout);
+	}, [searchTermState]);
 
 	return (
 		<>
