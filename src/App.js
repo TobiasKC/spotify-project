@@ -31,12 +31,5 @@ export default App;
 // https://www.w3schools.com/cssref/css_default_values.asp
 
 
-// to do:
-// get request for search data 
-// implement search term into get req
-// Iterate + Show data
-// Add Player component 
-// 
-
 //Ideas:
 // In search terms, spaces should be replaced by '%20' or '+'  

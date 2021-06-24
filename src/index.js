@@ -13,21 +13,22 @@ const scope =
 
 const initialState = {
 	authToken: "",
-	authURL : `https://accounts.spotify.com/authorize?response_type=token&client_id=${clientID}&redirect_uri=${redirectURL}&scope=${scope}`
+	authURL: `https://accounts.spotify.com/authorize?response_type=token&client_id=${clientID}&redirect_uri=${redirectURL}&scope=${scope}`,
+	searchTerm: "happy",
 };
 // Is data accessed by any other component?
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
 		case "UPDATE_AUTH_TOKEN":
-			return {authToken : action.value};
+			return { authToken: action.value };
+		case "UPDATE_SEARCH_TERM":
+			return { searchTerm: action.value };
 		default:
 			return state;
 	}
 };
 
 export const store = createStore(reducer);
-
-
 
 ReactDOM.render(
 	<React.StrictMode>
