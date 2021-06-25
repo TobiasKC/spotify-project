@@ -1,0 +1,58 @@
+@import "_variables.scss";
+
+.searchBar {
+	border: 2px solid black;
+	border-radius: 5px;
+	// top right and left
+	padding: 5px;
+	height: 40px;
+	width: 200px;
+	flex: 1;
+	margin: auto 5px;
+}
+
+.resultsContainer {
+	background-color: white;
+    height: 700px;
+	max-width: 500px;
+    z-index: 1;
+    position: fixed;
+    top: 50px;
+    overflow: scroll;
+    right: 300px;
+    border-radius: 5%;
+
+}
+
+.trackSearchResults{
+    margin: 2px;
+    padding: 5px;
+    border: 2px solid lightgray;
+    z-index: 1;
+    max-height: 70px;
+    align-items: center;
+}
+
+.searchImage{
+    width: 64px;
+    height: 64px;
+    padding: 5px;
+    border: 2px solid black;
+    // bottom: 3px;
+}
+
+.searchTitle{
+    color: hotpink;
+    font-size: 20px;
+    position: relative;
+    bottom: 80px;
+    left: 70px;
+}
+
+.searchArtist{
+    color: hotpink;
+font-size: 20px;
+position: relative;
+bottom: 100px;
+left: 70px;
+}

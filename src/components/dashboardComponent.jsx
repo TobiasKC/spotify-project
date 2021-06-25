@@ -9,10 +9,12 @@ const DashboardComponent = () => {
 
 	useEffect(() => {
 		dispatch({ type: "UPDATE_AUTH_TOKEN", value: fetchToken() });
-	},[]);
+	}, []);
 
 	const authToken = useSelector((state) => state.authToken);
+	const searchResults = useSelector((state) => state.searchResults);
 
+	//Swap out for Regex eventually
 	function fetchToken() {
 		const url = new URLSearchParams(window.location.href).toString();
 		const firstChar = url.indexOf("=");
@@ -25,17 +27,16 @@ const DashboardComponent = () => {
 	//Enable dispatch
 	const dispatch = useDispatch();
 
-	//Logs state and undefined similatenousy
-	console.log(searchTermState);
-	// Api call works with songName in GET request
-	const songName = "happy";
 	const searchType = "track";
+	
 
-	//Possible that state isnt being updated/read fast enough
 	useEffect(() => {
 		const timeout = setTimeout(() => {
-			if (!authToken) console.log("Token not found", authToken);
-			if (!searchTermState) console.log("State not found", searchTermState);
+			if (!authToken || !searchTermState) {
+				console.log("Token or State not found", authToken, searchTermState);
+				return;
+			}
+
 			axios
 				.get(
 					`https://api.spotify.com/v1/search?q=${searchTermState}&type=${searchType}`,
@@ -44,22 +45,25 @@ const DashboardComponent = () => {
 					}
 				)
 				.then((res) => {
-					console.log(
-						res.data.tracks.items.map((track) => {
+					dispatch({
+						type: "UPDATE_SEARCH_RESULTS",
+						value: res.data.tracks.items.map((track) => {
 							return {
 								artist: track.artists[0].name,
 								title: track.uri,
 								albumUrl: track.album.images[2].url,
 							};
-						})
-					);
+						}),
+					});
 				})
 				.catch((err) => {
 					console.log(err);
 				});
-		}, 500);
+		}, 300);
 		return () => clearTimeout(timeout);
 	}, [searchTermState]);
+
+	
 
 	return (
 		<>
@@ -73,3 +77,11 @@ const DashboardComponent = () => {
 	);
 };
 export default DashboardComponent;
+
+// Render songs to screen
+// limit results from api call
+//Add player
+//Play songs
+// Add song image to screen
+// Queue component
+// Store songs to state (queue)
