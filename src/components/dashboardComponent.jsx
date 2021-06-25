@@ -28,7 +28,6 @@ const DashboardComponent = () => {
 	const dispatch = useDispatch();
 
 	const searchType = "track";
-	
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
@@ -50,7 +49,8 @@ const DashboardComponent = () => {
 						value: res.data.tracks.items.map((track) => {
 							return {
 								artist: track.artists[0].name,
-								title: track.uri,
+								id: track.uri,
+								title: track.name,
 								albumUrl: track.album.images[2].url,
 							};
 						}),
@@ -62,8 +62,6 @@ const DashboardComponent = () => {
 		}, 300);
 		return () => clearTimeout(timeout);
 	}, [searchTermState]);
-
-	
 
 	return (
 		<>
