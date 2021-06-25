@@ -25,34 +25,38 @@
 }
 
 .trackSearchResults{
-    margin: 2px;
-    padding: 5px;
+    margin: 5px;
+    padding: 10px;
     border: 2px solid lightgray;
     z-index: 1;
-    max-height: 70px;
-    align-items: center;
+    height: 80px;
+    cursor: pointer;
 }
 
 .searchImage{
     width: 64px;
     height: 64px;
-    padding: 5px;
+    margin: 5px;
     border: 2px solid black;
-    // bottom: 3px;
+    display: block;
+    position: relative;
+    bottom: 10px;
 }
 
 .searchTitle{
-    color: hotpink;
+    color: $spotifyDarkBlack;
     font-size: 20px;
     position: relative;
-    bottom: 80px;
+    bottom: 98px;
     left: 70px;
+    margin-left: 3px;
 }
 
 .searchArtist{
-    color: hotpink;
-font-size: 20px;
+    color: $spotifyLightBlack;
+font-size: 15px;
 position: relative;
-bottom: 100px;
+bottom: 120px;
 left: 70px;
+margin-left: 3px;
 }
