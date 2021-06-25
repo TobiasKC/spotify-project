@@ -19,9 +19,7 @@ const initialState = {
 	playQueue: [],
 };
 
-//Create reducer
-// Update store on click
-// Link to relevant places
+
 // Ensure player works
 //Style player
 

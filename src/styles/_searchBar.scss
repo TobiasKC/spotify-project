@@ -10,9 +10,7 @@
 	flex: 1;
 	margin: auto 5px;
 }
-.hidden{
-    display: none;
-}
+
 .resultsContainer {
 	background-color: white;
     height: 700px;
@@ -26,6 +24,15 @@
     border-radius: 5%;
 
 }
+
+.resultsContainer{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .resultsContainer::-webkit-scrollbar {
+    display: none;
+  }
 
 //Could use regex to destory any 'feat' artists 
 

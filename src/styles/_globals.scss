@@ -1,10 +1,21 @@
-*, *:before, *:after {
-  box-sizing: border-box;
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-  
-  button:hover {
-    cursor: pointer;
-  }
+body {
+	background-color: $spotifyLightBlack;
+}
+button:hover {
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
 
 // Disabled for testing purposes
 
@@ -13,4 +24,3 @@
 //   max-width: 100vw;
 //   overflow: hidden;
 // }
-
