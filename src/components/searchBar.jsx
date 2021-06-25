@@ -14,19 +14,17 @@ const SearchBar = (props) => {
 				className={"searchBar"}
 				onInput={(e) =>
 					dispatch({ type: "UPDATE_SEARCH_TERM", value: e.target.value })
-				}></input> 
-			<div className={searchTerm.length > 0 ?"resultsContainer" : "hidden"}>
-				<div className={searchTerm.length > 0 ?"trackSearchResults" : "hidden"}>
-					{searchResults.map((track) => (
-						<TrackSearchResults
-							title={track.title}
-							albumCover={track.albumUrl}
-							artist={track.artist}
-						/>
-					))}
-				</div>
+				}></input>
+			<div className={searchTerm.length > 0 ? "resultsContainer" : "hidden"}>
+				{searchResults.map((track) => (
+					<TrackSearchResults
+						title={track.title}
+						albumCover={track.albumUrl}
+						artist={track.artist}
+					/>
+				))}
 			</div>
 		</>
 	);
-}
+};
 export default SearchBar;

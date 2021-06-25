@@ -1,10 +1,10 @@
-
+import { useSelector } from "react-redux";
 const TrackSearchResults = (props) => {
-
+	const searchTerm = useSelector((state) => state.searchTerm);
 	
 		return (
 			<>
-				<div className={"trackSearchResults"}>
+				<div className={searchTerm.length > 0 ? "trackSearchResults" : "hidden"}>
 					<img
 						src={props.albumCover}
 						alt='Image Not Found'
