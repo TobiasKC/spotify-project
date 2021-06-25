@@ -10,19 +10,24 @@
 	flex: 1;
 	margin: auto 5px;
 }
-
+.hidden{
+    display: none;
+}
 .resultsContainer {
 	background-color: white;
     height: 700px;
-	max-width: 500px;
+	width: 700px;
     z-index: 1;
     position: fixed;
     top: 50px;
     overflow: scroll;
+    overflow-x: hidden;
     right: 300px;
     border-radius: 5%;
 
 }
+
+//Could use regex to destory any 'feat' artists 
 
 .trackSearchResults{
     margin: 5px;

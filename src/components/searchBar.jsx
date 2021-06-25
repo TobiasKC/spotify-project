@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 const SearchBar = (props) => {
 	const dispatch = useDispatch();
 	const searchResults = useSelector((state) => state.searchResults);
-	console.log(searchResults);
+	const searchTerm = useSelector((state) => state.searchTerm);
 	return (
 		<>
 			<input
@@ -14,9 +14,9 @@ const SearchBar = (props) => {
 				className={"searchBar"}
 				onInput={(e) =>
 					dispatch({ type: "UPDATE_SEARCH_TERM", value: e.target.value })
-				}></input>
-			<div className={"resultsContainer"}>
-				<div className={"trackSearchResults"}>
+				}></input> 
+			<div className={searchTerm.length > 0 ?"resultsContainer" : "hidden"}>
+				<div className={searchTerm.length > 0 ?"trackSearchResults" : "hidden"}>
 					{searchResults.map((track) => (
 						<TrackSearchResults
 							title={track.title}
@@ -28,6 +28,5 @@ const SearchBar = (props) => {
 			</div>
 		</>
 	);
-};
-
+}
 export default SearchBar;
