@@ -16,7 +16,15 @@ const initialState = {
 	authURL: `https://accounts.spotify.com/authorize?response_type=token&client_id=${clientID}&redirect_uri=${redirectURL}&scope=${scope}`,
 	searchTerm: "",
 	searchResults: [],
+	playQueue: [],
 };
+
+//Create reducer
+// Update store on click
+// Link to relevant places
+// Ensure player works
+//Style player
+
 // Is data accessed by any other component?
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
@@ -26,6 +34,8 @@ const reducer = (state = initialState, action) => {
 			return { ...state, searchTerm: action.value };
 		case "UPDATE_SEARCH_RESULTS":
 			return { ...state, searchResults: action.value };
+		case "UPDATE_PLAY_QUEUE":
+			return { ...state, playQueue: action.value};
 		default:
 			return state;
 	}

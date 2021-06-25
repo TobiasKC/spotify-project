@@ -1,10 +1,11 @@
-import TrackSearchResults from "./TrackSearchResults";
+import TrackSearchResults from "./trackSearchResults";
 import { useDispatch, useSelector } from "react-redux";
 
 const SearchBar = (props) => {
 	const dispatch = useDispatch();
 	const searchResults = useSelector((state) => state.searchResults);
 	const searchTerm = useSelector((state) => state.searchTerm);
+
 	return (
 		<>
 			<input
@@ -21,6 +22,7 @@ const SearchBar = (props) => {
 						title={track.title}
 						albumCover={track.albumUrl}
 						artist={track.artist}
+						id={track.id}
 					/>
 				))}
 			</div>
