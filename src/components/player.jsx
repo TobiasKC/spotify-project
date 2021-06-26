@@ -7,5 +7,5 @@ const Player = (props) => {
 	if (!authToken) return null;
 	return <SpotifyPlayer token={authToken} uris={playQueue ? playQueue : []} autoPlay = {true} />;
 };
-
+//Keep autoplay to true
 export default Player;
