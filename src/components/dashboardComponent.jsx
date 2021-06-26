@@ -14,6 +14,7 @@ const DashboardComponent = () => {
 
 	const authToken = useSelector((state) => state.authToken);
 	const searchResults = useSelector((state) => state.searchResults);
+    const playQueue = useSelector((state) => state.playQueue);
 
 	//Swap out for Regex eventually
 	function fetchToken() {
@@ -73,7 +74,7 @@ const DashboardComponent = () => {
 					"https://upload.wikimedia.org/wikipedia/en/d/df/RedHotChiliPeppersCalifornication.jpg"
 				}
 			/>
-			{/* <Player /> */}
+			<Player token = {authToken} queue={playQueue[0]}/>
 		</>
 	);
 };
