@@ -2,7 +2,7 @@
 @media screen and (max-width: 800px) {
 	.albumContainer {
 		width: 80%;
-		max-height: 60%;
+		max-height: 50%;
 		margin: 10px auto 10px;
 		border: 30px solid $spotifyLightBlack;
 		position: absolute;
@@ -47,7 +47,7 @@
 	.PlayerRSWP {
 		position: fixed;
 		min-height: 0px !important;
-		max-height: 135px;
+		max-height: 200px;
 	}
 
 	._ControlsRSWP{
