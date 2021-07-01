@@ -7,7 +7,8 @@
 	box-sizing: content-box;
 	width: 300px;
 	height: 300px;
-	margin: auto;
+	//Top, left/Right and Bottom
+	margin: 5px auto 20px;	
 }
 
 img {
@@ -25,7 +26,7 @@ button.navigation {
 	color: $spotifyWhite;
 	background-color: $spotifyDarkBlack;
 	border-radius: 50%;
-	border: 2px solid yellow;
+	border: 2px solid $spotifyGreen;
 	height: 50px;
 	width: 50px;
 	padding: 5px;
@@ -34,3 +35,14 @@ button.navigation {
 	text-align: center;
 }
 
+// @media screen and (max-width: 800px){
+// 	.albumContainer{
+// 		width: 100;
+// 		margin: auto;
+// 		border: 50px solid black;
+// 	}
+
+// 	// .img{
+// 	// width: 100%;
+// 	// }
+// }

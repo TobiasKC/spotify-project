@@ -1,0 +1,41 @@
+@import "_variables.scss";
+@media screen and (max-width: 800px) {
+	.albumContainer {
+		width: 80%;
+		height: 40%;
+		margin: 10px auto 10px;
+		border: 30px solid $spotifyLightBlack;
+	}
+
+	body {
+		background-color: black;
+	}
+	.img {
+		width: 80%;
+		height: 80%;
+		position: absolute;
+	}
+
+	._ContentRSWP {
+		min-width: 100%;
+	}
+
+	.card {
+		width: 90vw;
+		height: 90vh;
+		margin: 20px auto 0;
+	}
+
+
+	.resultsContainer {
+		height: 300px;
+		width: 200px;
+		top: 0;
+		right: 0px;
+		left: 100px;
+		position: absolute;
+		bottom: 200px;
+	}
+}
+
+//UNder 400 width bad

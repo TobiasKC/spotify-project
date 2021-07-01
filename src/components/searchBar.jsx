@@ -8,6 +8,7 @@ const SearchBar = (props) => {
 
 	return (
 		<>
+			<img src="..\images\logo_black.png" alt="Not Found" className={"spotifyLogo"} />
 			<input
 				type='text'
 				placeholder={props.placeholder}

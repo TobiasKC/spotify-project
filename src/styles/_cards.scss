@@ -1,13 +1,15 @@
 .card {
-	background-color: $spotifyLightBlack;
+	background-color: $spotifyDarkBlack;
     // top, right+left, bottom
 	margin: 20vh auto 0px;
 	padding: 5px;
 	display: flex;
 	flex-direction: column;
     border-radius: 12px;
-	width: 200px;
+	width: 400px;
 	height: 500px;
+	border: 5px solid white;
+	align-self: center;
 
 	button {
 		color: $spotifyGreen;
@@ -34,10 +36,20 @@
 		top: 40%;
 		border: 1px solid black;
 		border-radius: 10px;
-		height: 35px;
+		height: 80px;
 		// top, right, bottom, left
 		margin: 10px 10px 0px 10px;
 		padding: 5px;
 		font-weight: 450;
+		font-size: large;
 	}
 }
+
+// @media screen and (max-width: 600px) {
+// 	.card {
+// 		width: 90vw;
+// 		height: 90vh;
+// 		margin: 20px auto 0;
+
+// 	}
+//   }

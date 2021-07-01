@@ -1,12 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 *,
 *:before,
 *:after {
 	box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
+}
+
+html{
+	height: 100vh;
+	width: 100vw;
 }
 body {
 	background-color: $spotifyLightBlack;
+	font-family: 'Lato', 'sans-serif';
 }
 button:hover {
 	cursor: pointer;
@@ -15,12 +22,18 @@ button:hover {
 .hidden {
 	display: none;
 }
-/* Hide scrollbar for IE, Edge and Firefox */
 
-// Disabled for testing purposes
+.PlayerRSWP{
+	max-width: 600px;
+	margin: auto;
+	position: relative;
+	bottom: 0px;
+	left: 0px;
+}
 
-// body{
-//   max-height: 100vh;
-//   max-width: 100vw;
-//   overflow: hidden;
-// }
+// @media screen and (max-width: 600px) {
+// 	._ContentRSWP {
+// 		min-width: 100%;
+
+// 	}
+//   }

@@ -12,7 +12,7 @@ const authURL = `https://accounts.spotify.com/authorize?response_type=token&clie
 const GetStarted = () => {
 	return (
 		<div className='card'>
-			<BackButton />
+			{/* <BackButton /> */}
 			<h3>Welcome to Spotify Web Player</h3>
 			<p>To get started:</p>
 			<TextButton class={"cta"} link={authURL} text={"Host a Session"} />
