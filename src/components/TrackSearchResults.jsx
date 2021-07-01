@@ -11,6 +11,7 @@ const TrackSearchResults = (props) => {
 		});
 		console.log(playQueue);
 	}
+	
 
 	return (
 		<>

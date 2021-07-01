@@ -74,7 +74,7 @@ const DashboardComponent = () => {
 					"https://upload.wikimedia.org/wikipedia/en/d/df/RedHotChiliPeppersCalifornication.jpg"
 				}
 			/>
-			<Player token = {authToken} queue={playQueue[0]}/>
+			<Player/>
 		</>
 	);
 };
