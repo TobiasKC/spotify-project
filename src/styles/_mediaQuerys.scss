@@ -2,22 +2,23 @@
 @media screen and (max-width: 800px) {
 	.albumContainer {
 		width: 80%;
-		height: 40%;
+		max-height: 60%;
 		margin: 10px auto 10px;
 		border: 30px solid $spotifyLightBlack;
+		position: absolute;
+		top: 10vh;
+		z-index: -1;
 	}
-
+	header {
+		position: fixed;
+	}
 	body {
 		background-color: black;
 	}
 	.img {
 		width: 80%;
 		height: 80%;
-		position: absolute;
-	}
-
-	._ContentRSWP {
-		min-width: 100%;
+		position: relative;
 	}
 
 	.card {
@@ -26,16 +27,38 @@
 		margin: 20px auto 0;
 	}
 
-
 	.resultsContainer {
-		height: 300px;
-		width: 200px;
-		top: 0;
-		right: 0px;
-		left: 100px;
+		max-height: 68vh;
+		width: 90vw;
 		position: absolute;
-		bottom: 200px;
+		left: 5vw;
+		// top: 15vh;
+		margin-top: 15px;
+		z-index: 5 !important;
+	}
+
+	.searchArtist {
+		font-size: 15px;
+	}
+	.searchTitle {
+		font-size: 15px;
+	}
+
+	.PlayerRSWP {
+		position: fixed;
+		min-height: 0px !important;
+		max-height: 135px;
+	}
+
+	._ControlsRSWP{
+		height: 75px !important;
+	}
+
+	.rswp__active{
+		max-height: 70px;
+		img{
+			max-height: 64px;
+			max-width: 64px;
+		}
 	}
 }
-
-//UNder 400 width bad
