@@ -1,20 +1,16 @@
 import { useSelector } from "react-redux";
 import SpotifyPlayer from "react-spotify-web-playback";
 
-
 const Player = (props) => {
 	const authToken = useSelector((state) => state.authToken);
 	const playQueue = useSelector((state) => state.playQueue);
-
+	//No token dont render player
 	if (!authToken) return null;
+	//Pre-made player component
 	return (
 		<SpotifyPlayer
 			token={authToken}
 			uris={playQueue ? playQueue : []}
-			className = {"test"}
-			callback={(state) => {
-				//https://github.com/gilbarbara/react-spotify-web-playback/blob/master/src/types/common.ts
-			}}
 			autoPlay={true}
 			play={true}
 			magnifySliderOnHover={true}

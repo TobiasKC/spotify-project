@@ -2,22 +2,29 @@ import TrackSearchResults from "./trackSearchResults";
 import { useDispatch, useSelector } from "react-redux";
 
 const SearchBar = (props) => {
+	//Use dispatch
 	const dispatch = useDispatch();
+	//Store selectors
 	const searchResults = useSelector((state) => state.searchResults);
 	const searchTerm = useSelector((state) => state.searchTerm);
 
 	return (
 		<>
-			<img src="..\images\logo_black.png" alt="Not Found" className={"spotifyLogo"} />
+			<img
+				src='..\\images\\logo_black.png'
+				alt='Not Found'
+				className={"spotifyLogo"}
+			/>
 			<input
 				type='text'
 				placeholder={props.placeholder}
-				// Can't use state here, can if placeholder = value
 				className={"searchBar"}
+				//On input update state with current search query for API call
 				onInput={(e) =>
 					dispatch({ type: "UPDATE_SEARCH_TERM", value: e.target.value })
 				}></input>
-			<div className={searchTerm.length > 0 ? "resultsContainer" : "hidden"}>
+			<div //If search term exists, show search results container
+				className={searchTerm.length > 0 ? "resultsContainer" : "hidden"}>
 				{searchResults.map((track) => (
 					<TrackSearchResults
 						title={track.title}

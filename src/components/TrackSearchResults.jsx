@@ -11,11 +11,11 @@ const TrackSearchResults = (props) => {
 		});
 		console.log(playQueue);
 	}
-	
 
 	return (
 		<>
 			<div
+				id='TrackSearchResults'
 				onClick={() => selectTrack(props.id)}
 				className={searchTerm.length > 0 ? "trackSearchResults" : "hidden"}>
 				<img src={props.albumCover} alt='Not Found' className={"searchImage"} />
