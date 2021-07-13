@@ -65,7 +65,7 @@ const DashboardComponent = () => {
 				});
 		}, 300);
 		return () => clearTimeout(timeout);
-	}, [searchTermState]); //only triggers when search term changes
+	}, [searchTermState]);
 
 	return (
 		<div
