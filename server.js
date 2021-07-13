@@ -13,7 +13,7 @@ const authURL = `https://accounts.spotify.com/authorize?response_type=token&clie
 const searchType = "track";
 const searchTermState = "Post Malone";
 const authToken =
-	"BQBGi1S9OBalYFVvVV3nEmBK4iYeew9XBKmsHwuh7AuYcjM7KdrpjPguGhxVy5ERrbOYE95G4zRQ6Be2XV2ltuEbFLakMMFBeUkyZQwZLFJ-XtO21DboCpaZN5et8dL3j4K_6ofsgSzkLalsfJB2qOrdZiUY4anSDJZCst7to1CWqUmvOTSyM5PX980z";
+	"BQAFgPR1xZ9deb6owtepExTR0q5LTgBdMLdvSpYYPAZ9R8QqCo3UI6zE1TeKWVDIfuY4oKd22mE733ajdydQDH3diw0oPquoYphsaoyN2Q-pmAN-VixPjk2DlL_gTDYEHrNRsvjV89Bcub5TBNum2ZyG65UhR9TtKdcw2mOuIaz-nxki2UB2_WRbGkIV";
 
 //To do (Create new branch):
 
@@ -22,23 +22,33 @@ const authToken =
 //Return Tracks to React
 //Implement track results into current project
 
-app.get("/", () => {
-	axios
-		.get(
-			`https://api.spotify.com/v1/search?q=${searchTermState}&type=${searchType}`,
-			{
-				headers: { Authorization: `Bearer ${authToken}` },
-			}
-		)
-		.then((res) => {
-			console.log(res.data.tracks.items);
-		})
-		//Log error if present
-		.catch((err) => {
-			console.log(err);
-		});
-	console.log("Hello");
+//function should take all variables as parameters, sent in get rwquest headers
+app.get("/", (request, response) => {
+	async function getApiData() {
+		await axios
+			.get(
+				`https://api.spotify.com/v1/search?q=${searchTermState}&type=${searchType}`,
+				{
+					headers: { Authorization: `Bearer ${authToken}` },
+				}
+			)
+			.then((res) => {
+				response.send(res.data.tracks.items);
+			});
+	}
+
+	getApiData();
 });
+
+// console.log(
+// 	getSpotifyTracks()
+// 		.then(function (res) {
+// 			return res;
+// 		})
+// 		.catch(function (err) {
+// 			console.log(err);
+// 		})
+// );
 
 app.get("/", () => {
 	console.log("Hello World");
