@@ -1,6 +1,6 @@
 import TrackSearchResults from "./trackSearchResults";
 import { useDispatch, useSelector } from "react-redux";
-
+import Logo from "../images/logo_white.png";
 const SearchBar = (props) => {
 	//Use dispatch
 	const dispatch = useDispatch();
@@ -10,11 +10,7 @@ const SearchBar = (props) => {
 
 	return (
 		<>
-			<img
-				src='..\\images\\logo_black.png'
-				alt='Not Found'
-				className={"spotifyLogo"}
-			/>
+			<img src={Logo} alt='Not Found' className={"spotifyLogo"} />
 			<input
 				type='text'
 				placeholder={props.placeholder}

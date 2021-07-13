@@ -1,24 +1,24 @@
 @import "_variables.scss";
 
-
-header{
+header {
 	background-color: $spotifyLightBlack;
+	display: flex;
+	align-items: center;
 }
 
-.spotifyLogo{
-	height: 40px;
-	width: 40px;
+.spotifyLogo {
+	width: 15%;
+	margin: 8px 10px 8px;
 }
 
 .searchBar {
 	border: 2px solid black;
 	border-radius: 5px;
-	// top right and left
 	padding: 5px;
 	height: 40px;
 	width: 200px;
 	flex: 1;
-	margin: auto 5px;
+	margin: 10px 10px 10px 0px;
 }
 
 .resultsContainer {
@@ -28,10 +28,10 @@ header{
 	margin: auto;
 	z-index: 1;
 	position: fixed;
-	top: 50px;
+	top: 80px;
 	overflow: scroll;
 	overflow-x: hidden;
-	right: 300px;
+	right: 350px;
 	border-radius: 5px;
 }
 
@@ -82,4 +82,3 @@ header{
 	left: 70px;
 	margin-left: 3px;
 }
-

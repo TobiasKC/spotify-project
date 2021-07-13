@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background-color: #191414;
+  font-family: 'Lato', 'sans-serif';
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.PlayerRSWP {
+  max-width: 100;
+  margin: auto;
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+}
+
+.card {
+  background-color: black;
+  margin: 20vh auto 0px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 12px;
+  width: 400px;
+  height: 500px;
+  border: 5px solid white;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.card button {
+  color: #1db954;
+}
+
+.card h3,
+.card p {
+  position: relative;
+  top: 20%;
+  margin-bottom: 10px;
+  text-align: center;
+  color: white;
+}
+
+.card .icon {
+  width: 40px;
+  height: 40px;
+}
+
+.card .cta {
+  background-color: #1db954;
+  color: white;
+  position: relative;
+  top: 40%;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 80px;
+  margin: 10px 10px 0px 10px;
+  padding: 5px;
+  font-weight: 450;
+  font-size: large;
+}
+
+.albumContainer {
+  border: 150px solid black;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  width: 300px;
+  height: 300px;
+  margin: 5px auto 20px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+}
+
+button.navigation {
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  border: 2px solid #1db954;
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  margin: 5px;
+  font-size: 10px;
+  text-align: center;
+}
+
+header {
+  background-color: #191414;
+}
+
+.spotifyLogo {
+  height: 40px;
+  width: 40px;
+}
+
+.searchBar {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  height: 40px;
+  width: 200px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: auto 5px;
+}
+
+.resultsContainer {
+  background-color: white;
+  height: 700px;
+  width: 700px;
+  margin: auto;
+  z-index: 1;
+  position: fixed;
+  top: 50px;
+  overflow: scroll;
+  overflow-x: hidden;
+  right: 300px;
+  border-radius: 5px;
+}
+
+.resultsContainer {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.resultsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.trackSearchResults {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid lightgray;
+  z-index: 1;
+  height: 80px;
+  cursor: pointer;
+}
+
+.searchImage {
+  width: 64px;
+  height: 64px;
+  margin: 5px;
+  border: 2px solid black;
+  display: block;
+  position: relative;
+  bottom: 8px;
+}
+
+.searchTitle {
+  color: black;
+  font-size: 20px;
+  position: relative;
+  bottom: 75px;
+  left: 70px;
+  margin-left: 3px;
+}
+
+.searchArtist {
+  color: #191414;
+  font-size: 15px;
+  position: relative;
+  bottom: 75px;
+  left: 70px;
+  margin-left: 3px;
+}
+
+@media screen and (max-width: 800px) {
+  .albumContainer {
+    width: 80%;
+    max-height: 50%;
+    margin: 10px auto 10px;
+    border: 30px solid #191414;
+    position: absolute;
+    top: 10vh;
+    z-index: -1;
+  }
+  header {
+    position: fixed;
+  }
+  body {
+    background-color: black;
+  }
+  .img {
+    width: 80%;
+    height: 80%;
+    position: relative;
+  }
+  .card {
+    width: 90vw;
+    height: 90vh;
+    margin: 20px auto 0;
+  }
+  .resultsContainer {
+    max-height: 68vh;
+    width: 90vw;
+    position: absolute;
+    left: 5vw;
+    margin-top: 15px;
+    z-index: 5 !important;
+  }
+  .searchArtist {
+    font-size: 15px;
+  }
+  .searchTitle {
+    font-size: 15px;
+  }
+  .PlayerRSWP {
+    position: fixed;
+    min-height: 0px !important;
+    max-height: 200px;
+  }
+  ._ControlsRSWP {
+    height: 75px !important;
+  }
+  .rswp__active {
+    max-height: 70px;
+  }
+  .rswp__active img {
+    max-height: 64px;
+    max-width: 64px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

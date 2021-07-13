@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 *,
 *:before,
 *:after {
@@ -7,13 +7,18 @@
 	margin: 0;
 }
 
-html{
+html {
 	height: 100vh;
 	width: 100vw;
 }
 body {
-	background-color: $spotifyLightBlack;
-	font-family: 'Lato', 'sans-serif';
+	background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+		url("../images/club.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	font-family: "Lato", "sans-serif";
+	// Link; https://www.pexels.com/photo/people-in-concert-1763075/
 }
 button:hover {
 	cursor: pointer;
@@ -23,11 +28,15 @@ button:hover {
 	display: none;
 }
 
-.PlayerRSWP{
+.PlayerRSWP {
 	max-width: 100;
 	margin: auto;
-	position: relative;
+	position: fixed;
 	bottom: 0px;
 	left: 0px;
 }
 
+a {
+	text-decoration: none;
+	color: white;
+}

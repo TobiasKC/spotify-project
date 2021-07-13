@@ -1,5 +1,4 @@
 import DashboardHeader from "./dashboardHeader";
-import DashboardAlbum from "./dashboardAlbum";
 import Player from "./player.jsx";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -78,11 +77,6 @@ const DashboardComponent = () => {
 				}
 			}}>
 			<DashboardHeader />
-			<DashboardAlbum
-				albumCover={
-					"https://upload.wikimedia.org/wikipedia/en/d/df/RedHotChiliPeppersCalifornication.jpg"
-				}
-			/>
 			<Player />
 		</div>
 	);
