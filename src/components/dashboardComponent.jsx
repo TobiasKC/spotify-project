@@ -39,17 +39,14 @@ const DashboardComponent = () => {
 			//Api GET request
 			//Template literal dynamically fills in parameters
 			axios
-				.get(
-					`https://api.spotify.com/v1/search?q=${searchTermState}&type=${searchType}`,
-					{
-						headers: { Authorization: `Bearer ${authToken}` },
-					}
-				)
+				.get("http://localhost:5500/search", {
+					headers: { token: `${authToken}` },
+				})
 				.then((res) => {
 					//Update store with query results
 					dispatch({
 						type: "UPDATE_SEARCH_RESULTS",
-						value: res.data.tracks.items.map((track) => {
+						value: res.data.map((track) => {
 							return {
 								artist: track.artists[0].name,
 								id: track.uri,

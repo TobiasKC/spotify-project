@@ -1,0 +1,11 @@
+Big tasks:
+
+Create custom component
+Create Host / Guest class (Get user profile from API) 
+Implement Web Sockets
+
+
+Small:
+
+Update Song search Headers
+Move log in to Server

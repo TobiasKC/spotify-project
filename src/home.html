@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<button onclick="joinParty()">Join party</button>
+		<button onclick="addTrack()">Add Track</button>
+		<input type="text" id="party" />
+	</body>
+</html>
+<script>
+	const socket = new WebSocket("ws://localhost:8080");
+
+	socket.addEventListener("open", () => {
+		console.log("WS Opened");
+		//Set state then manuipulate front end
+	});
+
+	socket.addEventListener("message", (e) => {
+		console.log("Message recieved", e.data);
+	});
+
+	//Sends message to WS
+	//Need to be stringified
+	function joinParty() {
+		const id = document.getElementById("party").value;
+		console.log(id);
+		socket.send(JSON.stringify({ partyID: id }));
+	}
+
+	function addTrack() {
+		socket.send(JSON.stringify({ trackID: 123 }));
+	}
+</script>
