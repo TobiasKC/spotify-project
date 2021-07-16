@@ -1,31 +1,36 @@
+import Icon from "./fa-icon";
+import { BsPlayFill } from "react-icons/bs";
+import { BiSkipNextCircle } from "react-icons/bi";
+import { BiSkipPreviousCircle } from "react-icons/bi";
 import { useSelector } from "react-redux";
-import SpotifyPlayer from "react-spotify-web-playback";
-
 const Player = (props) => {
-	const authToken = useSelector((state) => state.authToken);
-	const playQueue = useSelector((state) => state.playQueue);
-	//No token dont render player
-	if (!authToken) return null;
-	//Pre-made player component
+	const isPlaying = useSelector((state) => state.isPlaying);
 	return (
-		<SpotifyPlayer
-			token={authToken}
-			uris={playQueue ? playQueue : []}
-			autoPlay={true}
-			play={true}
-			magnifySliderOnHover={true}
-			styles={{
-				activeColor: "#fff",
-				bgColor: "#333",
-				color: "#fff",
-				loaderColor: "#fff",
-				loaderSize: "20px",
-				sliderColor: "#1cb954",
-				trackArtistColor: "#ccc",
-				trackNameColor: "#fff",
-				height: "150px",
-			}}
-		/>
+		<div className='playerContainer'>
+			<Icon
+				className='playControls'
+				icon={BiSkipPreviousCircle}
+				size='3em'
+				endpoint={"playback/previous"}
+			/>
+			<Icon
+				className='playControls'
+				icon={BsPlayFill}
+				size='3em'
+				endpoint={
+					isPlaying.isPlaying === false ? "playback/play" : "playback/pause"
+				}
+			/>
+			<Icon
+				className='playControls'
+				icon={BiSkipNextCircle}
+				size='3em'
+				endpoint={"playback/next"}
+			/>
+		</div>
 	);
 };
 export default Player;
+
+//Recieve empty body if nothing has been played
+//if 'paused' returns isplaying == false

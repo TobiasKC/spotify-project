@@ -1,0 +1,17 @@
+@import "_variables.scss";
+
+.playerContainer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	height: 15%;
+	align-items: center;
+
+	.controlButton {
+		background-color: white;
+		border: none;
+	}
+}

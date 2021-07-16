@@ -1,3 +1,19 @@
+Current: Create custom component
+
+Define logic in playback endpoint 
+Play needs Queue for playback 
+Middleware
+Investigate Try/Catch
+
+App logic: 
+
+Playing first track: Click on search results --> (Start/Resume a User's Playback) --> If playing then add to queue
+Manipulate Queue after that
+Storing isPlaying in the store allows one to show/hide play pcture, artist etc
+
+
+
+
 Big tasks:
 
 Create custom component

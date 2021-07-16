@@ -17,8 +17,8 @@ const initialState = {
 	searchTerm: "",
 	searchResults: [],
 	playQueue: [],
+	isPlaying: { isPlaying: "false", uri: "" },
 };
-
 
 // Ensure player works
 //Style player
@@ -33,7 +33,9 @@ const reducer = (state = initialState, action) => {
 		case "UPDATE_SEARCH_RESULTS":
 			return { ...state, searchResults: action.value };
 		case "UPDATE_PLAY_QUEUE":
-			return { ...state, playQueue: action.value};
+			return { ...state, playQueue: action.value };
+		case "UPDATE_CURRENT_PLAY":
+			return { ...state, isPlaying: action.value };
 		default:
 			return state;
 	}
