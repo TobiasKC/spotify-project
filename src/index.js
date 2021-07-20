@@ -17,7 +17,7 @@ const initialState = {
 	searchTerm: "",
 	searchResults: [],
 	playQueue: [],
-	isPlaying: { isPlaying: "false", uri: "" },
+	isPlaying: {},
 };
 
 // Ensure player works
