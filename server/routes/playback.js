@@ -50,6 +50,36 @@ router.put("/play", (req, res) => {
 });
 
 router.put("/pause", (req, res) => {
+	async function handlePause() {
+		try {
+			await axios.put(
+				"https://api.spotify.com/v1/me/player/pause",
+				{},
+				{
+					headers: { Authorization: `Bearer ${req.headers.token}` },
+				}
+			);
+		} catch (err) {
+			console.log(err);
+		}
+
+		try {
+			let payload = await axios.get("https://api.spotify.com/v1/me/player", {
+				headers: {
+					Authorization: `Bearer ${req.headers.token}`,
+					"Content-Type": "application/json",
+					"cache-control": "no-cache",
+				},
+			});
+			res.send({
+				isPlaying: payload.data.is_playing,
+				uri: payload.data.item.uri,
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	}
+	handlePause();
 	console.log("paused");
 });
 
