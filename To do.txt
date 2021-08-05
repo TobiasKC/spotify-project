@@ -1,9 +1,9 @@
 Current: Create custom component
 
-Define logic in playback endpoint 
-Play needs Queue for playback 
-Middleware
-Investigate Try/Catch
+Use State as Input for Player
+Skip Forward / Backward
+Auth Token Middleware
+
 
 App logic: 
 

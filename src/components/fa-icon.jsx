@@ -19,7 +19,6 @@ const Icon = (props) => {
 				}
 			)
 			.then((res) => {
-				console.log(res.data);
 				dispatch({
 					type: "UPDATE_CURRENT_PLAY",
 					value: res.data,

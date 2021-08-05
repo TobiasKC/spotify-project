@@ -3,13 +3,10 @@ import { BsPlayFill } from "react-icons/bs";
 import { BiSkipNextCircle } from "react-icons/bi";
 import { BiSkipPreviousCircle } from "react-icons/bi";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+
 const Player = (props) => {
 	const isPlaying = useSelector((state) => state.isPlaying);
 
-	useEffect(() => {
-		console.log(isPlaying);
-	});
 	return (
 		<div className='playerContainer'>
 			<Icon
