@@ -13,11 +13,11 @@ const scope =
 
 const authURL = `https://accounts.spotify.com/authorize?response_type=token&client_id=${clientID}&redirect_uri=${redirectURL}&scope=${scope}`;
 
-const searchType = "track";
-const searchTermState = "Post Malone";
-
 //function should take all variables as parameters, sent in get rwquest headers
 app.get("/search", (request, response) => {
+	
+	const searchType = req.headers.searchType || "track"
+	const searchTermState = req.headers.searchType || "Post Malone";
 	async function getApiData() {
 		try {
 			const result = await axios.get(
