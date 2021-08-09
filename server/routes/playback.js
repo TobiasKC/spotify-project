@@ -5,81 +5,71 @@ const axios = require("axios");
 const searchType = "track";
 const searchTermState = "Post Malone";
 
-//isPlaying?
-//Endpoint works from insomnia
-// router.get("/isPlaying", (req, res) => {
-// 	checkPlay();
-// });
-
 //Handle play
-router.put("/play", (req, res) => {
-	async function handlePlay() {
-		try {
-			await axios.put(
-				"https://api.spotify.com/v1/me/player/play",
-				{
-					uris: ["spotify:track:21jGcNKet2qwijlDFuPiPb"], //Hard coded- need to update to be dynamic
-				},
-				{
-					headers: { Authorization: `Bearer ${req.headers.token}` },
-				}
-			);
-		} catch (err) {
-			console.log(err);
-		}
-
-		try {
-			let payload = await axios.get("https://api.spotify.com/v1/me/player", {
-				headers: {
-					Authorization: `Bearer ${req.headers.token}`,
-					"Content-Type": "application/json",
-					"cache-control": "no-cache",
-				},
-			});
-			res.send({
-				isPlaying: payload.data.is_playing,
-				uri: payload.data.item.uri,
-			});
-		} catch (err) {
-			console.log(err);
-		}
+router.put("/play", async (req, res) => {
+	try {
+		await axios.put(
+			"https://api.spotify.com/v1/me/player/play",
+			{
+				uris: ["spotify:track:21jGcNKet2qwijlDFuPiPb"], //Hard coded- need to update to be dynamic
+			},
+			{
+				headers: { Authorization: `Bearer ${req.headers.token}` },
+			}
+		);
+	} catch (err) {
+		console.log(err);
 	}
-	handlePlay();
+
+	try {
+		let payload = await axios.get("https://api.spotify.com/v1/me/player", {
+			headers: {
+				Authorization: `Bearer ${req.headers.token}`,
+				"Content-Type": "application/json",
+				"cache-control": "no-cache",
+			},
+		});
+		res.json({
+			isPlaying: payload.data.is_playing,
+			uri: payload.data.item.uri,
+		});
+	} catch (err) {
+		console.log(err);
+		res.json({ isError: true });
+	}
 
 	console.log("play");
 });
 
-router.put("/pause", (req, res) => {
-	async function handlePause() {
-		try {
-			await axios.put(
-				"https://api.spotify.com/v1/me/player/pause",
-				{},
-				{
-					headers: { Authorization: `Bearer ${req.headers.token}` },
-				}
-			);
-		} catch (err) {
-			console.log(err);
-		}
-
-		try {
-			let payload = await axios.get("https://api.spotify.com/v1/me/player", {
-				headers: {
-					Authorization: `Bearer ${req.headers.token}`,
-					"Content-Type": "application/json",
-					"cache-control": "no-cache",
-				},
-			});
-			res.send({
-				isPlaying: payload.data.is_playing,
-				uri: payload.data.item.uri,
-			});
-		} catch (err) {
-			console.log(err);
-		}
+router.put("/pause", async (req, res) => {
+	try {
+		await axios.put(
+			"https://api.spotify.com/v1/me/player/pause",
+			{},
+			{
+				headers: { Authorization: `Bearer ${req.headers.token}` },
+			}
+		);
+	} catch (err) {
+		console.log(err);
 	}
-	handlePause();
+
+	try {
+		let payload = await axios.get("https://api.spotify.com/v1/me/player", {
+			headers: {
+				Authorization: `Bearer ${req.headers.token}`,
+				"Content-Type": "application/json",
+				"cache-control": "no-cache",
+			},
+		});
+		res.json({
+			isPlaying: payload.data.is_playing,
+			uri: payload.data.item.uri,
+		});
+	} catch (err) {
+		console.log(err);
+	}
+
 	console.log("paused");
 });
 

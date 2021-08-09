@@ -1,6 +1,7 @@
 import TrackSearchResults from "./trackSearchResults";
 import { useDispatch, useSelector } from "react-redux";
 import Logo from "../images/logo_white.png";
+
 const SearchBar = (props) => {
 	//Use dispatch
 	const dispatch = useDispatch();

@@ -25,8 +25,7 @@ const DashboardComponent = () => {
 
 	//Enable dispatch
 	const dispatch = useDispatch();
-	//Define search type
-	const searchType = "track";
+
 	//When search term changes, update state with API results (after 300ms)
 	useEffect(() => {
 		//Set timeout

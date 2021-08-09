@@ -25,3 +25,12 @@ Small:
 
 Update Song search Headers
 Move log in to Server
+
+Russel notes:
+
+- Put hardcoded in .env file (Server) constants file fopr any hardcoded value.
+getStarted consts to .env in backend or delete
+- Tidy Github
+- Nest all routes (search endpoint in new file - keep server clean as possible)
+- /play exampe. Update other endpoints with updated async syntax. + json
+- Consistency in camelcase - prewttier everything
