@@ -20,10 +20,6 @@ const initialState = {
 	isPlaying: {},
 };
 
-// Ensure player works
-//Style player
-
-// Is data accessed by any other component?
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
 		case "UPDATE_AUTH_TOKEN":

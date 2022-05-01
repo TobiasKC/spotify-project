@@ -1,22 +1,31 @@
-import BackButton from "./backButton";
 import TextButton from "./textButton";
-
-const clientID = "07310eeebf82492b914f9156e15dceef";
-const redirectURL = "http://localhost:3000/dashboard";
-const scope =
-	"streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state";
-
-const authURL = `https://accounts.spotify.com/authorize?response_type=token&client_id=${clientID}&redirect_uri=${redirectURL}&scope=${scope}`;
-//To do: Connect to the store, link = state.authURL
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const GetStarted = () => {
+	// Todo - Hook up auth token once CORS issue sorted
+	const [authUrl, setAuthUrl] = useState("");
+	useEffect(() => {
+		axios
+			.get(`http://localhost:5500/logIn/authorise`)
+			.then((res) => {
+				setAuthUrl(res.data);
+				console.log(res.data);
+			})
+			.catch((e) => {
+				console.log(e);
+			});
+	}, []);
+
 	return (
 		<div className='card'>
-			{/* <BackButton /> */}
 			<h3>Welcome to Spotify Web Player</h3>
-			<p>To get started:</p>
-			<TextButton class={"cta"} link={authURL} text={"Host a Session"} />
-			<TextButton class={"cta"} text={"Join a Session"} />
+			<TextButton
+				disabled={!authUrl}
+				class={"cta"}
+				link={authUrl}
+				text={"Get Started"}
+			/>
 		</div>
 	);
 };

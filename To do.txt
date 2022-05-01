@@ -1,36 +1,10 @@
-Current: Create custom component
+//todo
 
-Use State as Input for Player
-Skip Forward / Backward
-Auth Token Middleware
-
-
-App logic: 
-
-Playing first track: Click on search results --> (Start/Resume a User's Playback) --> If playing then add to queue
-Manipulate Queue after that
-Storing isPlaying in the store allows one to show/hide play pcture, artist etc
-
-
-
-
-Big tasks:
-
-Create custom component
-Create Host / Guest class (Get user profile from API) 
-Implement Web Sockets
-
-
-Small:
-
-Update Song search Headers
-Move log in to Server
-
-Russel notes:
-
-- Put hardcoded in .env file (Server) constants file fopr any hardcoded value.
-getStarted consts to .env in backend or delete
-- Tidy Github
-- Nest all routes (search endpoint in new file - keep server clean as possible)
-- /play exampe. Update other endpoints with updated async syntax. + json
-- Consistency in camelcase - prewttier everything
+- Nest Search endpoint into new file
+- Update FetchToken function with Hash params: https://thewebdev.info/2021/09/19/how-to-get-query-parameters-from-a-hash-fragment-with-react-router-v5/
+- Come back to Spotifyt 204 issue
+- Switch Dashboard API call to use Lodash Debouce / Throttle
+- Search results in clickaway listener
+- Change Spotify Redirect URL to '/' and change Home component
+- Tailwind CSS
+- Reposition TrackResultsDiv

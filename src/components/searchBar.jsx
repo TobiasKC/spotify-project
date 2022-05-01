@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Logo from "../images/logo_white.png";
 
 const SearchBar = (props) => {
-	//Use dispatch
 	const dispatch = useDispatch();
-	//Store selectors
+
 	const searchResults = useSelector((state) => state.searchResults);
 	const searchTerm = useSelector((state) => state.searchTerm);
 
@@ -17,9 +16,10 @@ const SearchBar = (props) => {
 				placeholder={props.placeholder}
 				className={"searchBar"}
 				//On input update state with current search query for API call
-				onInput={(e) =>
-					dispatch({ type: "UPDATE_SEARCH_TERM", value: e.target.value })
-				}></input>
+				onInput={(e) => {
+					console.log(e.target.value);
+					dispatch({ type: "UPDATE_SEARCH_TERM", value: e.target.value });
+				}}></input>
 			<div //If search term exists, show search results container
 				className={searchTerm.length > 0 ? "resultsContainer" : "hidden"}>
 				{searchResults.map((track) => (

@@ -9,7 +9,6 @@ const TrackSearchResults = (props) => {
 			type: "UPDATE_PLAY_QUEUE",
 			value: [...playQueue, trackID],
 		});
-		console.log(playQueue);
 	}
 
 	return (

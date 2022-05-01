@@ -4,7 +4,7 @@ import { BiSkipNextCircle } from "react-icons/bi";
 import { BiSkipPreviousCircle } from "react-icons/bi";
 import { useSelector } from "react-redux";
 
-const Player = (props) => {
+const Player = () => {
 	const isPlaying = useSelector((state) => state.isPlaying);
 
 	return (

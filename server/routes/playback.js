@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
+// Breaking api change has limited functionallity:
+//https://community.spotify.com/t5/Spotify-for-Developers/204-regularly-being-incorrectly-returned-for-v1-me-player/m-p/5323889#M3888
+
 const searchType = "track";
 const searchTermState = "Post Malone";
 
@@ -37,8 +40,6 @@ router.put("/play", async (req, res) => {
 		console.log(err);
 		res.json({ isError: true });
 	}
-
-	console.log("play");
 });
 
 router.put("/pause", async (req, res) => {

@@ -5,8 +5,9 @@ import { useEffect } from "react";
 import axios from "axios";
 
 const DashboardComponent = () => {
-	// On Component mount, set value of authToken in state to result of fetchToken. Before useSelector() exectues.
+	const dispatch = useDispatch();
 
+	// Grab access token
 	useEffect(() => {
 		dispatch({ type: "UPDATE_AUTH_TOKEN", value: fetchToken() });
 	}, []);
@@ -23,9 +24,6 @@ const DashboardComponent = () => {
 		return url.substring(firstChar, secondChar).slice(1);
 	}
 
-	//Enable dispatch
-	const dispatch = useDispatch();
-
 	//When search term changes, update state with API results (after 300ms)
 	useEffect(() => {
 		//Set timeout
@@ -35,10 +33,9 @@ const DashboardComponent = () => {
 				console.log("Token or State not found", authToken, searchTermState);
 				return;
 			}
-			//Api GET request
-			//Template literal dynamically fills in parameters
+
 			axios
-				.get("http://localhost:5500/search", {
+				.get("http://localhost:5500/search/results", {
 					headers: { token: `${authToken}` },
 				})
 				.then((res) => {
@@ -55,7 +52,6 @@ const DashboardComponent = () => {
 						}),
 					});
 				})
-				//Log error if present
 				.catch((err) => {
 					console.log(err);
 				});

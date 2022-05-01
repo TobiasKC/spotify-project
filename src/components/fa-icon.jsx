@@ -32,7 +32,7 @@ const Icon = (props) => {
 	return (
 		<>
 			<button
-				onClick={() => handlePlayback(`${props.endpoint}`)}
+				onClick={() => handlePlayback(props.endpoint)}
 				className='controlButton'>
 				<props.icon size={props.size} />
 			</button>
