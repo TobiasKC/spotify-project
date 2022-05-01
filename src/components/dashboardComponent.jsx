@@ -19,9 +19,7 @@ const DashboardComponent = () => {
 	//Grab auth token from redirected URL
 	function fetchToken() {
 		const url = new URLSearchParams(window.location.href).toString();
-		const firstChar = url.indexOf("=");
-		const secondChar = url.indexOf("&");
-		return url.substring(firstChar, secondChar).slice(1);
+		return url.substring(url.indexOf("="), url.indexOf("&")).slice(1);
 	}
 
 	//When search term changes, update state with API results (after 300ms)
