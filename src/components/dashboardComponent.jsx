@@ -1,5 +1,5 @@
-import DashboardHeader from "./dashboardHeader";
 import Player from "./player.jsx";
+import SearchBar from "./searchBar";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
@@ -61,7 +61,7 @@ const DashboardComponent = () => {
 
 	return (
 		<>
-			<DashboardHeader />
+			<SearchBar />
 			<Player />
 		</>
 	);

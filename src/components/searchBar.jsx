@@ -14,28 +14,30 @@ const SearchBar = (props) => {
 
 	return (
 		<>
-			<img src={Logo} alt='Not Found' className={"spotifyLogo"} />
-			<input
-				type='text'
-				placeholder={props.placeholder}
-				className={"searchBar"}
-				value={searchTerm}
-				onInput={(e) => {
-					dispatch({ type: "UPDATE_SEARCH_TERM", value: e.target.value });
-				}}></input>
-			<ClickAwayListener onClickAway={handleClickaway}>
-				<div //If search term exists, show search results container
-					className={searchTerm.length > 0 ? "resultsContainer" : "hidden"}>
-					{searchResults.map((track) => (
-						<TrackSearchResults
-							title={track.title}
-							albumCover={track.albumUrl}
-							artist={track.artist}
-							id={track.id}
-						/>
-					))}
-				</div>
-			</ClickAwayListener>
+			<header>
+				<img src={Logo} alt='Not Found' className={"spotifyLogo"} />
+				<input
+					type='text'
+					placeholder={"Search for Songs..."}
+					className={"searchBar"}
+					value={searchTerm}
+					onInput={(e) => {
+						dispatch({ type: "UPDATE_SEARCH_TERM", value: e.target.value });
+					}}></input>
+				<ClickAwayListener onClickAway={handleClickaway}>
+					<div //If search term exists, show search results container
+						className={searchTerm.length > 0 ? "resultsContainer" : "hidden"}>
+						{searchResults.map((track) => (
+							<TrackSearchResults
+								title={track.title}
+								albumCover={track.albumUrl}
+								artist={track.artist}
+								id={track.id}
+							/>
+						))}
+					</div>
+				</ClickAwayListener>
+			</header>
 		</>
 	);
 };
