@@ -1,8 +1,8 @@
 //todo
-
-- Update FetchToken function with Hash params: https://thewebdev.info/2021/09/19/how-to-get-query-parameters-from-a-hash-fragment-with-react-router-v5/
 - Come back to Spotifyt 204 issue
-- Switch Dashboard API call to use Lodash Debouce / Throttle
 - Change Spotify Redirect URL to '/' and change Home component
 - Tailwind CSS
 - Reposition TrackResultsDiv
+- axios configuration
+- api prefix
+- Investigate Express middleware

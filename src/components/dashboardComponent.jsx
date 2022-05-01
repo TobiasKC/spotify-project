@@ -3,7 +3,6 @@ import SearchBar from "./searchBar";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
-
 const DashboardComponent = () => {
 	const dispatch = useDispatch();
 
@@ -33,9 +32,12 @@ const DashboardComponent = () => {
 			}
 
 			axios
-				.get("http://localhost:5500/search/results", {
-					headers: { token: `${authToken}` },
-				})
+				.get(
+					`http://localhost:5500/search/results/?searchTerm=${searchTermState}`,
+					{
+						headers: { token: `${authToken}` },
+					}
+				)
 				.then((res) => {
 					//Update store with query results
 					dispatch({
