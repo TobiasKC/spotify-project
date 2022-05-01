@@ -60,17 +60,10 @@ const DashboardComponent = () => {
 	}, [searchTermState]);
 
 	return (
-		<div
-			onClick={(e) => {
-				//Clear search term state if clicking outside when active
-				//Changes display : none
-				if (e.target.id !== "TrackSearchResults") {
-					dispatch({ type: "UPDATE_SEARCH_TERM", value: "" });
-				}
-			}}>
+		<>
 			<DashboardHeader />
 			<Player />
-		</div>
+		</>
 	);
 };
 export default DashboardComponent;
