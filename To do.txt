@@ -5,4 +5,4 @@
 - Reposition TrackResultsDiv
 - axios configuration
 - api prefix
-- Investigate Express middleware
+- Investigate Express middleware (Check for Spotify API token etc)

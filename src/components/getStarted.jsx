@@ -1,13 +1,13 @@
 import TextButton from "./textButton";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import { BASE_API_URL } from "../constants";
 const GetStarted = () => {
 	// Todo - Hook up auth token once CORS issue sorted
 	const [authUrl, setAuthUrl] = useState("");
 	useEffect(() => {
 		axios
-			.get(`http://localhost:5500/logIn/authorise`)
+			.get(`${BASE_API_URL}logIn/authorise`)
 			.then((res) => {
 				setAuthUrl(res.data);
 				console.log(res.data);

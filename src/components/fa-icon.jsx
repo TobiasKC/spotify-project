@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
+import { BASE_API_URL } from "../constants";
+
 const Icon = (props) => {
 	// Store is playing state in redux (for play / pause)
 	const dispatch = useDispatch();
@@ -8,7 +10,7 @@ const Icon = (props) => {
 	function handlePlayback(endpoint) {
 		axios
 			.put(
-				`http://localhost:5500/${endpoint}`,
+				`${BASE_API_URL}${endpoint}`,
 				{},
 				{
 					headers: {

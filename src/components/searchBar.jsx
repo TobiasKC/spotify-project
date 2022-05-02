@@ -2,7 +2,7 @@ import TrackSearchResults from "./trackSearchResults";
 import { useDispatch, useSelector } from "react-redux";
 import Logo from "../images/logo_white.png";
 import ClickAwayListener from "react-click-away-listener";
-const SearchBar = (props) => {
+const SearchBar = () => {
 	const dispatch = useDispatch();
 
 	const searchResults = useSelector((state) => state.searchResults);

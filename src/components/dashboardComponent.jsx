@@ -3,6 +3,7 @@ import SearchBar from "./searchBar";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
+import { BASE_API_URL } from "../constants.js";
 const DashboardComponent = () => {
 	const dispatch = useDispatch();
 
@@ -30,14 +31,13 @@ const DashboardComponent = () => {
 				console.log("Token or State not found", authToken, searchTermState);
 				return;
 			}
-
+			console.log(
+				`${BASE_API_URL}search/results/?searchTerm=${searchTermState}`
+			);
 			axios
-				.get(
-					`http://localhost:5500/search/results/?searchTerm=${searchTermState}`,
-					{
-						headers: { token: `${authToken}` },
-					}
-				)
+				.get(`${BASE_API_URL}search/results/?searchTerm=${searchTermState}`, {
+					headers: { token: `${authToken}` },
+				})
 				.then((res) => {
 					//Update store with query results
 					dispatch({

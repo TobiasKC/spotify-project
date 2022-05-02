@@ -34,7 +34,7 @@ router.put("/play", async (req, res) => {
 		});
 		res.json({
 			isPlaying: payload.data.is_playing,
-			uri: payload.data.item.uri,
+			uri: payload.data.item.uri || "",
 		});
 	} catch (err) {
 		console.log(err);
